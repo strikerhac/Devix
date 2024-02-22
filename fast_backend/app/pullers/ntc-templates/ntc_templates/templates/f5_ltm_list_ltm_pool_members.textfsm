@@ -1,0 +1,29 @@
+Value MEMBER_NAME (.*:.*)
+Value NODE (\d+.\d+.\d+.\d+)
+Value SESSION (.*)
+Value STATUS (.*)
+Value MONITOR (.*)
+
+#Separate VIP
+
+Start
+  ^\s+[M|m]embers\s+ -> Member
+  ^\s+monitor\s+${MONITOR}
+
+
+
+Member
+  ^\s+${MEMBER_NAME}\s
+  ^\s+[A|a]ddress\s+${NODE}
+  ^\s+[S|s]ession\s+${SESSION}
+  ^\s+[S|s]tate\s+${STATUS}
+  ^\s+} -> Record
+  ^\s+monitor\s+${MONITOR}
+
+
+  #^\\} -> Start
+
+
+
+
+#\s+(.*)\s+{

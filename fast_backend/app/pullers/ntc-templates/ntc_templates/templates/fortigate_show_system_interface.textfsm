@@ -1,0 +1,19 @@
+Value INTERFACE (.*)
+Value IP_ADDRESS (\d+.\d+.\d+.\d+)
+Value SUBNET (\d+.\d+.\d+.\d+)
+Value DESCRIPTION (.*)
+Value STATUS (\d+)
+Value VLAN_ID (\d+)
+
+
+
+
+#Separate VIP
+
+Start
+  ^\s*edit\s+"${INTERFACE}"
+  ^\s+set\s+ip\s+${IP_ADDRESS}\s+${SUBNET}
+  ^\s+set\s+description\s+"${DESCRIPTION}"
+  ^\s+set\s+status\s${STATUS}
+  ^\s+set\s+vlanid\s+${VLAN_ID}
+  ^\s+next -> Record

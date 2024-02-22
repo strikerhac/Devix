@@ -1,0 +1,14 @@
+.container{
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    height: 100%;
+}
+.heading{
+    padding: 10px;
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.page_row{
+    padding-top: 20px;
+}

@@ -1,0 +1,5 @@
+Value LB_MODE (.*)
+#Separate VIP
+
+Start
+  ^\s+[L|l]oad-balancing-mode\s${LB_MODE}
